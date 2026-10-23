@@ -1,6 +1,8 @@
 ---
+name: research-podatkowy
 description: Research podatkowy w SIP Leksio - przepisy, interpretacje i orzeczenia ze źródłami
 argument-hint: <pytanie podatkowe> [stan faktyczny, podatki, dzień stanu prawnego]
+disable-model-invocation: true
 ---
 
 Przeprowadź research podatkowy w SIP Leksio i odpowiedz na pytanie użytkownika:

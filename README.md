@@ -10,7 +10,8 @@ przepisu na wskazany dzień i podaje każde źródło z linkiem do sip.leksio.pl
 - **Konektor Leksio** (`https://mcp.leksio.pl/sip`): 11 narzędzi tylko do odczytu, logowanie kontem Leksio
   przez OAuth.
 - **Umiejętność `research-prawny`**: metoda pracy ze źródłami, zasady cytowania i obsługa limitów.
-- **Komendy**: `/research-podatkowy`, `/przepis-na-dzien`, `/linia-orzecznicza`, `/sprawdz-cytaty`.
+- **Komendy** (umiejętności uruchamiane przez Ciebie): `/research-podatkowy`, `/przepis-na-dzien`,
+  `/linia-orzecznicza`, `/sprawdz-cytaty`. Claude nie uruchamia ich sam, bo każda zużywa research.
 
 ## Wymagania
 
@@ -47,7 +48,7 @@ disposition and reasoning, checks the wording of a provision as at a given date 
 with a link to sip.leksio.pl.
 
 It bundles the Leksio connector (11 read-only tools, OAuth sign-in with a Leksio account), the
-`research-prawny` skill with the research and citation method, and four commands for tax research,
+`research-prawny` skill with the research and citation method, and four user-invoked skills for tax research,
 provision-on-date checks, case-law lines and citation verification. A verified Leksio account and
 acceptance of the Leksio MCP Rules are required. Monthly research allowance: free 5, SIP Pro 50,
 SIP Pro+ 150; each research includes up to 50 tool calls. Works in Claude on the web, desktop, mobile

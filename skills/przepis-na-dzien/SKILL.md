@@ -1,6 +1,8 @@
 ---
+name: przepis-na-dzien
 description: Brzmienie przepisu ustawy obowiązujące w podanym dniu, z porównaniem do innej daty
 argument-hint: <przepis, np. art. 15 ust. 1 CIT> <dzień RRRR-MM-DD> [druga data do porównania]
+disable-model-invocation: true
 ---
 
 Ustal brzmienie przepisu na dzień wskazany przez użytkownika:

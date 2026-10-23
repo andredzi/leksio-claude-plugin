@@ -1,6 +1,8 @@
 ---
+name: linia-orzecznicza
 description: Linia orzecznicza w kwestii prawnej - stanowiska sądów, rozbieżności i chronologia
 argument-hint: <kwestia prawna> [przepis, sądy, rok początkowy]
+disable-model-invocation: true
 ---
 
 Opracuj linię orzeczniczą w kwestii wskazanej przez użytkownika:

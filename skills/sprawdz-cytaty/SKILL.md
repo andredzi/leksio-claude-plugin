@@ -1,6 +1,8 @@
 ---
+name: sprawdz-cytaty
 description: Sprawdza sygnatury, publikatory i przepisy z tekstu w bazie SIP Leksio
 argument-hint: <tekst z cytowaniami do sprawdzenia>
+disable-model-invocation: true
 ---
 
 Sprawdź każde cytowanie w poniższym tekście w SIP Leksio. Wyciągnij sygnatury orzeczeń, numery interpretacji, publikatory (Dz.U., M.P.) i przepisy (art., §, ust., pkt z nazwą aktu). Dla każdego wywołaj lookup_citation. Gdy dokument istnieje, porównaj datę, sąd albo organ i treść tezy z tym, co twierdzi tekst (w razie wątpliwości przeczytaj fragment przez read_document_text).
