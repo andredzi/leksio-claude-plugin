@@ -1,0 +1,19 @@
+{
+  "name": "leksio",
+  "version": "1.0.0",
+  "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl.",
+  "author": {
+    "name": "Leksio sp. z o.o.",
+    "url": "https://leksio.pl"
+  },
+  "homepage": "https://leksio.pl/pomoc?temat=leksio-mcp",
+  "license": "Apache-2.0",
+  "keywords": [
+    "prawo",
+    "podatki",
+    "orzeczenia",
+    "interpretacje",
+    "legal research",
+    "Poland"
+  ]
+}

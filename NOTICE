@@ -1,0 +1,14 @@
+Leksio plugin for Claude
+Copyright 2026 Leksio sp. z o.o.
+
+The Apache License 2.0 in LICENSE covers only the files in this repository: the skill, the
+commands, the connector configuration and the documentation.
+
+It grants no rights to the Leksio service, the SIP Leksio database, the server at
+https://mcp.leksio.pl or any of its software, data or methods. It grants no rights to the Leksio
+name and logo (assets/leksio.png), which remain marks of Leksio sp. z o.o. Use of the connector
+is governed by the Leksio MCP Rules: https://leksio.pl/zasady/leksio-mcp
+
+Licencja Apache 2.0 obejmuje wyłącznie pliki tego repozytorium. Nie daje praw do usługi Leksio,
+bazy SIP Leksio, serwera https://mcp.leksio.pl ani jego oprogramowania, danych i metod, ani do
+nazwy i logo Leksio. Korzystanie z konektora regulują Zasady Leksio MCP.
