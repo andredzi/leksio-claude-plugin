@@ -1,13 +1,16 @@
 {
   "name": "leksio",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl.",
   "author": {
     "name": "Leksio sp. z o.o.",
     "url": "https://leksio.pl"
   },
   "homepage": "https://leksio.pl/pomoc?temat=leksio-mcp",
+  "repository": "https://github.com/andredzi/leksio-claude-plugin",
+  "documentationUrl": "https://leksio.pl/pomoc?temat=leksio-mcp",
   "privacyPolicyUrl": "https://leksio.pl/zasady/leksio-mcp#section-6",
+  "termsOfServiceUrl": "https://leksio.pl/zasady/leksio-mcp",
   "license": "Apache-2.0",
   "keywords": [
     "prawo",
