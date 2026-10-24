@@ -23,15 +23,21 @@ przepisu na wskazany dzień i podaje każde źródło z linkiem do sip.leksio.pl
 
 ## Gdzie działa
 
-Claude na stronie claude.ai, w aplikacji na komputer i telefon oraz w Cowork. Claude Code nie jest
-w tej wersji obsługiwany, bo logowanie wymaga adresu zwrotnego claude.ai.
+Claude na stronie claude.ai, w aplikacji na komputer i telefon, w Cowork oraz w Claude Code.
+W Claude Code zainstaluj wtyczkę poleceniem:
+
+```
+/plugin install leksio --marketplace andredzi/leksio-claude-plugin
+```
+
+Przy pierwszym użyciu Claude Code otworzy logowanie Leksio w przeglądarce. Ekran zgody pokaże
+„Leksio MCP dla Claude Code”.
 
 ## Prywatność i zakres
 
 Leksio nie zapisuje treści pytań. Przechowuje dostawcę, znaczniki czasu, liczniki operacji
 i identyfikatory pobranych dokumentów. Umiejętność prowadzi Claude tak, by do narzędzi trafiało samo
-zagadnienie prawne, bez danych osób i kontrahentów; serwer dodatkowo maskuje typowe identyfikatory
-(PESEL, NIP, KRS, rachunki, e-maile, telefony, numery faktur i umów). Wyniki to materiał do analizy, nie porada prawna.
+zagadnienie prawne, bez danych osób i kontrahentów. Wyniki to materiał do analizy, nie porada prawna.
 Szczegóły: [pomoc](https://leksio.pl/pomoc?temat=leksio-mcp),
 [polityka prywatności](https://leksio.pl/zasady/prywatnosc).
 
@@ -53,10 +59,10 @@ It bundles the Leksio connector (11 read-only tools, OAuth sign-in with a Leksio
 `research-prawny` skill with the research and citation method, and four user-invoked skills for tax research,
 provision-on-date checks, case-law lines and citation verification. A verified Leksio account and
 acceptance of the Leksio MCP Rules are required. Monthly research allowance: free 5, SIP Pro 50,
-SIP Pro+ 150; each research includes up to 50 tool calls. Works in Claude on the web, desktop, mobile
-and Cowork; Claude Code is not supported in this version. Skills require code execution to be enabled.
+SIP Pro+ 150; each research includes up to 50 tool calls. Works in Claude on the web, desktop, mobile,
+Cowork and Claude Code (`/plugin install leksio --marketplace andredzi/leksio-claude-plugin`). Skills require code execution to be enabled.
 Leksio does not store the content of your questions; the skill keeps personal and counterparty data out of
-tool calls and the server masks common identifiers. Results are not legal advice.
+tool calls. Results are not legal advice.
 
 The plugin files are licensed under Apache 2.0 (`LICENSE`); the Leksio service, database, MCP
 server, name and logo are not (`NOTICE`).

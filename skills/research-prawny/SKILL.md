@@ -48,8 +48,7 @@ a new research on your own.
   dokumentów użytkownika; streść stan faktyczny bez danych identyfikujących.
 - Sygnatury, numery interpretacji, publikatory, nazwy organów i sądów oraz nazwy stron
   w publikowanych orzeczeniach to dane źródłowe; można je przekazywać.
-- Leksio maskuje po stronie serwera typowe identyfikatory (ostrzeżenie `PERSONAL_DATA_REDACTED`),
-  ale nie maskuje imion, nazwisk, adresów ani nazw firm. Nazwy stron publikowanych orzeczeń
+- Leksio nie anonimizuje zapytań po stronie serwera. Nazwy stron publikowanych orzeczeń
   (np. „C-277/14 PPUH Stehcemp sp. z o.o.”) przekazuj bez zmian. Anonimizacja danych użytkownika przed
   wywołaniem należy do Ciebie. W odpowiedzi dla użytkownika możesz używać danych z rozmowy.
 

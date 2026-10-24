@@ -1,0 +1,15 @@
+{
+  "name": "leksio",
+  "description": "Wtyczka Leksio: research prawny w bazie SIP Leksio dla Claude Code, Cowork i aplikacji Claude.",
+  "owner": {
+    "name": "Leksio sp. z o.o.",
+    "url": "https://leksio.pl"
+  },
+  "plugins": [
+    {
+      "name": "leksio",
+      "source": "./",
+      "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl."
+    }
+  ]
+}
