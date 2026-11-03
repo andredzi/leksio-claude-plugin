@@ -9,7 +9,7 @@
     {
       "name": "leksio",
       "source": "./",
-      "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl."
+      "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i ZUS, dokumenty KNF i UODO, rejestr klauzul niedozwolonych UOKiK oraz brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl."
     }
   ]
 }
