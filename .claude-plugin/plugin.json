@@ -1,7 +1,7 @@
 {
   "name": "leksio",
-  "version": "1.2.3",
-  "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl.",
+  "version": "1.3.0",
+  "description": "Research prawny w bazie SIP Leksio: akty prawne, orzeczenia, interpretacje podatkowe i ZUS, dokumenty KNF i UODO, rejestr klauzul niedozwolonych UOKiK oraz brzmienie przepisu na dzień, z cytowaniem źródeł na sip.leksio.pl.",
   "author": {
     "name": "Leksio sp. z o.o.",
     "url": "https://leksio.pl"
@@ -17,6 +17,9 @@
     "podatki",
     "orzeczenia",
     "interpretacje",
+    "klauzule niedozwolone",
+    "KNF",
+    "UODO",
     "legal research",
     "Poland"
   ]

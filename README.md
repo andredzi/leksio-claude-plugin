@@ -1,7 +1,8 @@
 # Leksio dla Claude
 
-Wtyczka łączy Claude z bazą prawną SIP Leksio: aktami prawnymi, orzeczeniami sądów i interpretacjami
-podatkowymi z oficjalnych źródeł (Dziennik Ustaw, CBOSA, SAOS, EUREKA). Claude wyszukuje dokumenty po
+Wtyczka łączy Claude z bazą prawną SIP Leksio: aktami prawnymi, orzeczeniami sądów, interpretacjami
+podatkowymi i dokumentami organów z oficjalnych źródeł (Dziennik Ustaw, CBOSA, SAOS, EUREKA, ZUS, KNF,
+UODO oraz rejestr klauzul niedozwolonych UOKiK). Claude wyszukuje dokumenty po
 problemie, sygnaturze albo oznaczeniu przepisu, czyta sentencję i uzasadnienie, sprawdza brzmienie
 przepisu na wskazany dzień i podaje każde źródło z linkiem do sip.leksio.pl.
 
@@ -17,8 +18,9 @@ przepisu na wskazany dzień i podaje każde źródło z linkiem do sip.leksio.pl
 
 - Konto Leksio z potwierdzonym adresem e-mail i akceptacja
   [Zasad Leksio MCP](https://leksio.pl/zasady/leksio-mcp) przy pierwszym połączeniu.
-- Pula researchy wynika z planu konta: darmowe 5 w miesiącu, SIP Pro 50, SIP Pro+ 150. Jeden research
-  obejmuje do 50 wywołań narzędzi.
+- Pula researchy wynika z planu konta: darmowe 5, SIP Pro 50, SIP Pro+ 150 na okres puli. Okres trwa
+  miesiąc od rocznicy założenia konta (konto darmowe) albo od odnowienia okresu rozliczeniowego (SIP Pro,
+  SIP Pro+). Jeden research obejmuje do 50 wywołań narzędzi.
 - Umiejętności działają, gdy w Claude włączone jest wykonywanie kodu (Ustawienia, Możliwości).
 
 ## Gdzie działa
@@ -50,8 +52,9 @@ bazy SIP Leksio, serwera MCP ani nazwy i logo Leksio (`NOTICE`).
 
 # Leksio for Claude (English)
 
-This plugin connects Claude to the Leksio SIP database of Polish legal acts, court judgments and tax
-rulings from official sources. Claude searches by topic, case number or statutory citation, reads the
+This plugin connects Claude to the Leksio SIP database of Polish legal acts, court judgments, tax
+rulings and regulator documents from official sources (ZUS, the Polish Financial Supervision Authority
+KNF, the data protection authority UODO and the UOKiK register of unfair contract terms). Claude searches by topic, case number or statutory citation, reads the
 disposition and reasoning, checks the wording of a provision as at a given date and cites every source
 with a link to sip.leksio.pl.
 

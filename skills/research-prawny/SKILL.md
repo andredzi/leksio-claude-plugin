@@ -1,16 +1,17 @@
 ---
 name: research-prawny
-description: Metoda researchu prawa polskiego ze źródłami w bazie SIP Leksio (konektor Leksio). Używaj, gdy użytkownik pyta o przepisy, orzeczenia, interpretacje podatkowe, brzmienie przepisu na dzień, linię orzeczniczą albo prosi o sprawdzenie sygnatur i cytowań. Legal research method for Polish law with the Leksio connector.
+description: Metoda researchu prawa polskiego ze źródłami w bazie SIP Leksio (konektor Leksio). Używaj, gdy użytkownik pyta o przepisy, orzeczenia, interpretacje podatkowe albo ZUS, stanowiska i decyzje KNF, decyzje Prezesa UODO, klauzule niedozwolone z rejestru UOKiK, brzmienie przepisu na dzień, linię orzeczniczą albo prosi o sprawdzenie sygnatur i cytowań. Legal research method for Polish law with the Leksio connector.
 ---
 
 # Research prawny w SIP Leksio
 
-Konektor Leksio daje dostęp do bazy SIP Leksio: aktów prawnych (ELI, Dziennik Ustaw), orzeczeń sądów
-administracyjnych i powszechnych (CBOSA, SAOS), wyroków TSUE, interpretacji podatkowych (EUREKA), tez AI
-i opracowań Leksia. Serwer dostarcza dokumenty i metadane. Analizę i odpowiedź budujesz Ty, na podstawie
+Konektor Leksio daje dostęp do bazy SIP Leksio: aktów prawnych (ELI, Dziennik Ustaw) i umów
+międzynarodowych (MSZ), orzeczeń sądów administracyjnych i powszechnych, SN i TK (CBOSA, SAOS, SN, TK),
+wyroków TSUE (EURLEX), interpretacji podatkowych (EUREKA), interpretacji ZUS, dokumentów KNF i UKNF,
+decyzji Prezesa UODO, rejestru klauzul niedozwolonych i dokumentów Prezesa UOKiK, tez AI i opracowań Leksia. Serwer dostarcza dokumenty i metadane. Analizę i odpowiedź budujesz Ty, na podstawie
 tego, co przeczytasz w tej rozmowie.
 
-English summary: strip personal and counterparty data from every tool call, start one research per user task, search with filters, read the disposition and the
+English summary: strip personal and counterparty data from every tool call, start one research per user task, search with filters (including the ZUS, KNF, UODO and UOKIK source codes for regulators and the UOKiK unfair-terms register), read the disposition and the
 reasoning before drawing conclusions, check statutory wording as at the relevant date, cite every source
 with its sip.leksio.pl link, never invent case numbers, and stop at the research limits instead of opening
 a new research on your own.
@@ -21,9 +22,13 @@ a new research on your own.
    tego samego startu użyj tego samego `requestKey`.
 2. Zapamiętaj `research.id` i przekazuj je jako `researchId` do każdego narzędzia merytorycznego, także
    `search` i `fetch`. Nie używaj go do niezależnego, nowego zadania.
-3. Research obejmuje do 50 wywołań narzędzi i jest ważny 24 godziny, nie dłużej niż do końca miesiąca.
-   Nalicza się z miesięcznej puli dopiero przy pierwszym przyjętym wyszukaniu lub odczycie źródła.
-   Pula: konto darmowe 5 researchy w miesiącu, SIP Pro 50, SIP Pro+ 150.
+3. Research obejmuje do 50 wywołań narzędzi i jest ważny 24 godziny, nie dłużej niż do odnowienia puli.
+   Nalicza się z puli bieżącego okresu dopiero przy pierwszym przyjętym wyszukaniu lub odczycie źródła.
+   Pula na okres: konto darmowe 5 researchy, SIP Pro 50, SIP Pro+ 150. Okres trwa miesiąc: na koncie
+   darmowym od rocznicy założenia konta, w SIP Pro i SIP Pro+ od odnowienia okresu rozliczeniowego;
+   zmiana planu otwiera nowy okres z pełną pulą.
+   Termin odnowienia podawaj z `resetsAtDisplay` (czas polski). `resetsAt` jest w UTC; nie podawaj go
+   użytkownikowi bez przeliczenia na czas polski.
 4. Gdy `quota.research.used` osiągnie 40, zaplanuj pozostałe odczyty: zachowaj weryfikację źródeł
    i stanowiska przeciwne, ogranicz powtórzenia. Przy 50 podsumuj zebrane materiały i wskaż luki.
 5. Nigdy nie otwieraj kolejnego researchu automatycznie po limicie lub wygaśnięciu. Dalszy research
@@ -64,6 +69,24 @@ a new research on your own.
   szersze zapytanie kontrolne; filtr nie dowodzi kompletności.
 - `supplementaryResults` to jawne analogie do sprawdzenia, nie bezpośrednia praktyka.
 
+### Źródła regulacyjne
+
+- Kody źródeł (`sourceCodes`): `ZUS` (interpretacje ZUS), `KNF` (Komisja i Urząd Komisji Nadzoru
+  Finansowego), `UODO` (decyzje i postanowienia Prezesa UODO), `UOKIK` (rejestr klauzul niedozwolonych
+  i dokumenty Prezesa UOKiK). Kody organów (`issuingBodyCodes`): `ZUS`, `KNF`, `UKNF`, `UODO`, `UOKIK`.
+- `kinds: ["interpretation"]` obejmuje interpretacje podatkowe i dokumenty tych organów. Bez `sourceCodes`
+  wyniki mieszają się z EUREKA, więc przy pytaniu o konkretny organ podaj jego kod.
+- `documentType` wyniku: `tax_interpretation` (interpretacja podatkowa), `official_explanation` (pismo,
+  decyzja albo stanowisko organu), `unfair_contract_clause` (wpis rejestru klauzul niedozwolonych).
+- Rejestr klauzul niedozwolonych: tytuł wpisu to sam numer („Klauzula niedozwolona nr 1398”), więc szukaj
+  słowami z treści postanowienia (np. „opłata za monit”, „kara umowna”) z `sourceCodes: ["UOKIK"]`.
+  Wpis zawiera treść klauzuli, branżę, datę wpisu i sygnaturę wyroku Sądu Ochrony Konkurencji
+  i Konsumentów. Dotyczy postanowienia uznanego za niedozwolone w konkretnej sprawie: przy innym wzorcu
+  albo przedsiębiorcy porównaj brzmienie i kontekst, nie przenoś skutku wpisu automatycznie.
+- KNF i UKNF: rekomendacje i wytyczne opisują oczekiwania nadzorcze; nie przedstawiaj ich jako przepisów
+  powszechnie obowiązujących. UODO: sprawdź datę decyzji i to, czy sprawa trafiła do sądu
+  administracyjnego. ZUS: interpretacja dotyczy sprawy wnioskodawcy i nie jest precedensem.
+
 ## 4. Czytanie źródeł
 
 - Fragment wyniku, teza AI i karta dokumentu służą do wyboru źródeł. Nie zastępują lektury.
@@ -78,6 +101,8 @@ a new research on your own.
   oznaczeń źródła. Nie przypisuj sądowi orzekającemu wypowiedzi innej instancji ani strony.
 - Gdy sekcja jest `unavailable` albo `partial`, czytaj `section: all`. Brak rozpoznanej sekcji nie
   oznacza braku stanowiska.
+- Dokumenty ZUS, KNF, UODO i UOKiK mogą nie mieć podziału na `disposition` i `authority_reasoning`; wtedy
+  czytaj `section: all`. Wpis rejestru klauzul jest krótki i zwykle mieści się na jednej stronie.
 - Dalsze strony przez `nextCursor`, bez zmiany `section`. Nie pobieraj ponownie tej samej strony.
 - Wyrok TSUE: `paragraphs` (np. `48-60,84-92`) albo `find` dla dosłownych fraz. Pytania prejudycjalne
   i argumenty stron nie są stanowiskiem TSUE.
@@ -105,6 +130,8 @@ a new research on your own.
 
 - Każde przywołanie podaje rodzaj, sąd albo organ, datę i sygnaturę oraz klikalny link na
   sip.leksio.pl. Gotowe `citationMarkdown` zachowaj bez zmian.
+- Wpis rejestru klauzul niedozwolonych cytuj z numerem wpisu, datą wpisu i sygnaturą wyroku SOKiK;
+  dokument KNF, UODO albo ZUS z organem, rodzajem dokumentu, datą i znakiem sprawy, jeśli go ma.
 - `provenance.originalUrl` służy sprawdzeniu pochodzenia; podawaj go tylko na prośbę użytkownika.
 - Cytat dosłowny tylko z tekstu przeczytanego w tej rozmowie, z `pageHash` albo `chunkContentHash`.
 - Nigdy nie wymyślaj sygnatur, numerów interpretacji, dat ani publikatorów. Brak dokumentu w SIP nie
