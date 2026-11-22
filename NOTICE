@@ -1,14 +1,23 @@
 Leksio plugin for Claude
 Copyright 2026 Leksio sp. z o.o.
 
-The Apache License 2.0 in LICENSE covers only the files in this repository: the skill, the
-commands, the connector configuration and the documentation.
+The Apache License 2.0 in LICENSE covers only the skills, the commands, the connector configuration
+and the documentation in this repository. It does not cover .claude-plugin/icon.png.
+
+.claude-plugin/icon.png is the Leksio logo. All copyright and trademark rights in it are reserved by
+Leksio sp. z o.o. It is included only so that Claude can display it with this plugin. Any other use,
+copying or modification requires the prior written consent of Leksio sp. z o.o.
 
 It grants no rights to the Leksio service, the SIP Leksio database, the server at
 https://mcp.leksio.pl or any of its software, data or methods. It grants no rights to the Leksio
-name and logo, including the plugin icon, which remain marks of Leksio sp. z o.o. Use of the connector
+name and logo, which remain marks of Leksio sp. z o.o. Use of the connector
 is governed by the Leksio MCP Rules: https://leksio.pl/zasady/leksio-mcp
 
-Licencja Apache 2.0 obejmuje wyłącznie pliki tego repozytorium. Nie daje praw do usługi Leksio,
-bazy SIP Leksio, serwera https://mcp.leksio.pl ani jego oprogramowania, danych i metod, ani do
-nazwy i logo Leksio. Korzystanie z konektora regulują Zasady Leksio MCP.
+Licencja Apache 2.0 obejmuje wyłącznie umiejętności, polecenia, konfigurację konektora i dokumentację
+w tym repozytorium. Nie obejmuje pliku .claude-plugin/icon.png. Plik .claude-plugin/icon.png to logo
+Leksio. Leksio sp. z o.o. zastrzega do niego wszelkie prawa autorskie i prawa do oznaczenia. Logo jest
+dołączone wyłącznie po to, by Claude mógł je wyświetlić przy tej wtyczce. Inne korzystanie, kopiowanie
+lub zmiana wymagają uprzedniej pisemnej zgody Leksio sp. z o.o.
+
+Licencja nie daje praw do usługi Leksio, bazy SIP Leksio, serwera https://mcp.leksio.pl ani jego
+oprogramowania, danych i metod, ani do nazwy i logo Leksio. Korzystanie z konektora regulują Zasady Leksio MCP.

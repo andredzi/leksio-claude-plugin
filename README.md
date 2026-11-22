@@ -45,8 +45,10 @@ Szczegóły: [pomoc](https://leksio.pl/pomoc?temat=leksio-mcp),
 
 ## Licencja
 
-Pliki wtyczki udostępniamy na licencji Apache 2.0 (`LICENSE`). Licencja nie obejmuje usługi Leksio,
-bazy SIP Leksio, serwera MCP ani nazwy i logo Leksio (`NOTICE`).
+Pliki wtyczki, z wyjątkiem ikony (`.claude-plugin/icon.png`), są dostępne na licencji Apache 2.0
+(`LICENSE`). Logo Leksio w ikonie nie jest objęte tą licencją; Leksio sp. z o.o. zastrzega do niego
+wszelkie prawa. Licencja nie obejmuje też usługi Leksio, bazy SIP Leksio, serwera MCP ani nazwy Leksio
+(`NOTICE`).
 
 ---
 
@@ -67,7 +69,9 @@ Cowork and Claude Code (`/plugin install leksio --marketplace andredzi/leksio-cl
 Leksio does not store the content of your questions; the skill keeps personal and counterparty data out of
 tool calls. Results are not legal advice.
 
-The plugin files are licensed under Apache 2.0 (`LICENSE`); the Leksio service, database, MCP
-server, name and logo are not (`NOTICE`).
+The plugin files, except the icon (`.claude-plugin/icon.png`), are licensed under Apache 2.0
+(`LICENSE`). The Leksio logo in the icon is not covered by that licence; all rights in it are reserved
+by Leksio sp. z o.o. The Leksio service, database, MCP server and name are not covered either
+(`NOTICE`).
 
 Operated by Leksio sp. z o.o. Support: https://leksio.pl/pomoc?temat=leksio-mcp
